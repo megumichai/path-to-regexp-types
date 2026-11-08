@@ -173,7 +173,7 @@ type ParseGroup<
   Acc extends readonly Token[],
   Terminator extends string,
 > =
-  ParseChars<S, '', [], '}'> extends infer R
+  ParseChars<S, '', readonly [], '}'> extends infer R
     ? R extends readonly [infer Tokens extends readonly Token[], infer Next extends string]
       ? ParseChars<Next, '', PushToken<Text, Acc, GroupToken<Tokens>>, Terminator>
       : never
@@ -186,7 +186,7 @@ type ParseGroup<
  * Invalid patterns resolve to `never`.
  */
 export type Parse<Path extends string> =
-  ParseChars<Path, '', [], ''> extends infer R
+  ParseChars<Path, '', readonly [], ''> extends infer R
     ? R extends readonly [infer Tokens extends readonly Token[], string]
       ? Tokens
       : never
