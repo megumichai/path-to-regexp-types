@@ -11,8 +11,16 @@
     "types",
     "typescript"
   ],
+  "homepage": "https://github.com/megumichai/path-to-regexp-types#readme",
+  "bugs": {
+    "url": "https://github.com/megumichai/path-to-regexp-types/issues"
+  },
   "license": "MIT",
   "author": "Megumi Chai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megumichai/path-to-regexp-types.git"
+  },
   "files": [
     "dist"
   ],
