@@ -69,6 +69,12 @@ describe('Parse', () => {
     >()
   })
 
+  it('keeps parsing patterns rejected by pathToRegexp', () => {
+    expectTypeOf<Parse<'/:a:b'>>().toEqualTypeOf<
+      readonly [TextToken<'/'>, ParamToken<'a'>, ParamToken<'b'>]
+    >()
+  })
+
   it('rejects invalid patterns', () => {
     expectTypeOf<Parse<'/users/:id?'>>().toEqualTypeOf<never>()
     expectTypeOf<Parse<'/users/{'>>().toEqualTypeOf<never>()

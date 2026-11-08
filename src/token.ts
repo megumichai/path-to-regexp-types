@@ -183,7 +183,8 @@ type ParseGroup<
  * Parses a `path-to-regexp` v8 pattern into a tuple of tokens.
  *
  * Parameter names support ASCII identifiers and quoted names (`:"foo-bar"`).
- * Invalid patterns resolve to `never`.
+ * Invalid syntax resolves to `never`. This mirrors `parse()`; `PathParams`
+ * additionally rejects patterns that `pathToRegexp()` cannot compile.
  */
 export type Parse<Path extends string> =
   ParseChars<Path, '', readonly [], ''> extends infer R
