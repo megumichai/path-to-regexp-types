@@ -1,0 +1,72 @@
+{
+  "name": "path-to-regexp-types",
+  "version": "0.0.1",
+  "description": "Compile-time TypeScript utilities for parsing path-to-regexp patterns.",
+  "keywords": [
+    "params",
+    "path",
+    "path-to-regexp",
+    "router",
+    "type-level",
+    "types",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Megumi Chai",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "changeset": "changeset",
+    "typecheck": "tsc --noEmit",
+    "typecheck:diagnostics": "tsc --noEmit --extendedDiagnostics",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "version": "changeset version",
+    "release": "changeset publish",
+    "prepublishOnly": "pnpm build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/core": "^0.18.5",
+    "@changesets/cli": "^3.0.3",
+    "@types/node": "^26.6.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "oxfmt": "^0.77.0",
+    "oxlint": "^1.92.0",
+    "oxlint-tsgolint": "^7.0.2006",
+    "path-to-regexp": "^8.4.2",
+    "publint": "^0.3.25",
+    "tsdown": "^0.23.7",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  },
+  "peerDependencies": {
+    "path-to-regexp": "^8.0.0 || ^9.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.34.9"
+}
